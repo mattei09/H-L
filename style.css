@@ -9,6 +9,9 @@ body {
   background-color: #f9f8f7;
  /*textinho da pagina de inicio*/
   color: #091009;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe pelo menos a altura total da janela */
 }
 
 
@@ -99,12 +102,12 @@ nav a {
   background-color: #c7b299;
 }
 footer {
-  background-color: #c88e59;
-  text-align: center;
-  color: rgb(99, 57, 2);
-  padding: 15px;
-  margin-top: 40px;
-
+  margin-top: auto; /* Empurra o footer para o final da página */
+  background-color: #c88e59; /* Cor de fundo do footer */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px 0; /* Espaçamento interno */
+  color: rgb (99, 57, 2);
+  
 }
 
 .servicos {
