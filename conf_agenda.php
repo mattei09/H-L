@@ -113,7 +113,7 @@ if ($result->num_rows > 0) {
                <section class="servico">
                <h3>Agendamento</h3>  
             <form ACTION="conf_agenda.php" Method='post'>
-  <label for="cliente">Nome do Cliente:</label>
+  <label for="cliente">Nome:</label>
         <input type="text" name="cliente" id="cliente" required>
 
         <label for="telefone">Telefone:</label>

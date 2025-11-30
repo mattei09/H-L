@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Serviços do Profissional</title>
+        <link rel="stylesheet" href="style.css">
+         <section class="area-profissional">
+         <header>
+    <nav>
+        <h2>Gerenciar Serviços</h2>
+        <a href="area-prof.html">Área Profissional</a>
+     <a href="agenda-prof.php">Acesso á agenda</a>
+    </nav>
+  </header>
+    </head>
 <body>
 
 <?php

@@ -26,12 +26,13 @@ if ($conn->connect_error) {
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
     <style>
-        #calendar { max-width: 1100px; margin: 0px auto; }
-    </style>    
+        #calendar { max-width: 1100px; margin: 40px auto; }
+    </style>
+    <title>Agenda Profissional</title>
 </head>
 
   <header>
-    <h2>Confirmação de Agendamento</h2>
+    <h2>Agenda do Profissional</h2>
      <nav> 
         <a href="area-prof.html">Voltar</a>
         <a href="index.html">Início</a>
@@ -104,7 +105,6 @@ for ($t = $hora_inicio; $t <= $hora_fim; $t += 30 * 60) {
 }
 
 // 🔹 Interface de filtro
-echo "<h2>Agenda do Profissional</h2>";
 echo "<form method='GET' style='margin-bottom:15px;'>
         <label>Data:</label>
         <input type='date' name='data' value='$data_inicio'>

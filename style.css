@@ -49,11 +49,39 @@ nav a {
 }
 
 .profissional-agenda {
-  margin: 10px;
-  padding: 40px 20px;
+  margin: 0px;
+  padding: 0px;
   text-align: left;
 
 }
+
+.profissional-agenda form {
+  margin: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.area-profissional  {
+  margin: -5px;
+  padding: 5px;
+  color:black;
+  text-align: center;
+}
+.area-profissional h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+.area-profissional h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.area-profissional p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.area-profissional form {
+  margin: 20px;
+}
+
 .apresentacao{
   margin: 15px;
   padding: 40px 20px;
