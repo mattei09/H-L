@@ -1,24 +1,29 @@
 * {
-  margin: 0;
+margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
 body {
-  background-color: #f5ece0;
+  background-color: #f9f8f7;
  /*textinho da pagina de inicio*/
   color: #091009;
 }
 
+
 header {
-  background-color: #c7b299;
+  background-color:  #c7b299;
   padding: 20px;
   text-align: center;
 }
 
 header h1 {
   color: white;
+  font-size: 2rem;
+}
+header h2 {
+  color:white;
   font-size: 2rem;
 }
 
@@ -33,15 +38,18 @@ nav a {
   font-weight: bold;
 }
 
-main {
+.apresentacao{
+  margin: 15px;
   padding: 40px 20px;
-  text-align: center;
+  text-align: left;
+
 }
 
 .apresentacao h2 {
   font-size: 2.5rem;
-  color: #d63384;
+  color: #171716;
   margin-bottom: 10px;
+
 }
 
 .apresentacao p {
@@ -49,11 +57,20 @@ main {
   margin-bottom: 20px;
 }
 
+.inicial p {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+   padding: 10px 20px;
+   padding: 15px;
+  margin-top: 40px;
+}
+
 .btn-login{
   display: inline-block;
   padding: 10px 20px;
-  background-color: #c7b299;
-  color: white;
+  background-color:  #171614;
+  color:  #100f0d;
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s;
@@ -66,12 +83,12 @@ main {
 .btn-agendar{
   display: inline-block;
   padding: 10px 20px;
-  background-color: #c7b299;
+  background-color:#c7b299;
   color: rgb(240, 237, 234);
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s;
-  box-shadow: 0 4px 8px rgba(126, 117, 75, 0.911);
+  box-shadow: 0 4px 8px rgba(108, 100, 65, 0.911);
 }
 
 .btn-agendar:hover {
@@ -80,29 +97,30 @@ main {
 footer {
   background-color: #c88e59;
   text-align: center;
-  color: rgb(36, 32, 32);
+  color: rgb(99, 57, 2);
   padding: 15px;
   margin-top: 40px;
+
 }
 
 .servicos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content: center;
   gap: 20px;
   padding: 40px 20px;
-   background-color: #c7b299;
+   background-color:  #f9f8f7;
 }
 
 .card-servico {
-  background-color: #cdf3d0;
-  border: 2px solid #c88e59;
+  background-color: #dec38f82;
+  border: 2px solid  #c88e59;;
   border-radius: 10px;
   display: inline-block;
   padding: 20px;
   width: 250px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(74, 71, 57, 0.911);
+  box-shadow: 0 4px 8px rgba(117, 109, 75, 0.911);;
   transition: transform 0.3s;
 }
 
@@ -143,8 +161,8 @@ footer {
   background-color: #fff0f5;
   padding: 30px;
   border-radius: 10px;
-  border: 2px solid #3dce20;
-  box-shadow: 0 4px 8px rgba(200, 3, 55, 0.844);
+  border: 2px solid #dbd390;
+  box-shadow: 0 4px 8px rgba(108, 100, 65, 0.911);;
 }
 
 form {
@@ -155,7 +173,7 @@ form {
 form label {
   margin-bottom: 5px;
   font-weight: bold;
-  color: #c7b299;
+  color: #f8f7f5;
 }
 
 form input,
@@ -206,7 +224,7 @@ form button:hover {
 
 .agenda-page th,
 .agenda-page td {
-  border: 1px solid #333;
+  border: 1px solid #dec38f;
   padding: 10px;
   text-align: center;
 }
@@ -225,22 +243,75 @@ form button:hover {
   font-weight: bold;
 }
 /* login dos profissionais */
-.login {
-  background-color: #6b5402ce;
+.login { 
+  background-color:#c88e59;;
   padding: 30px;
   max-width: 350px;
   margin: 50px auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(242, 247, 196, 0.97);
+  box-shadow: 0 4px 12px rgba(28, 27, 26, 0.911);;
   font-family: 'Segoe UI', sans-serif;
+  
+}
+.login p {
+  margin-bottom: 15%;
 }
 
 .login label {
   display: block;
   margin-bottom: 8px;
-  color: ##eeddcc;
+  color:#1e1c1cce;
   font-weight: 600;
   font-size: 14px;
 }
 
 
+
+.card-agenda {
+  background-color: #dec38f82;
+  border: 2px solid  #c88e59;;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px;
+  width: 86,5%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(117, 109, 75, 0.911);;
+  transition: transform 0.3s;
+
+}
+.card-agenda a {
+text-decoration: none;
+font-weight: arial;
+color: green
+}
+
+.servico {
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+   color:white;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color:#c88e59;
+  max-width: 350px;
+  margin: -15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(28, 27, 26, 0.911);;
+  font-family: 'Segoe UI', sans-serif;
+  
+  
+}
+
+.resumo {
+  display: inline-block;
+  text-align: left;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color:  #c7b299;
+  max-width: 350px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(60, 55, 49, 0.911);
+  font-family: 'Segoe UI', sans-serif;
+  
+}

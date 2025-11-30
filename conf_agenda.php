@@ -44,35 +44,74 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $horario=$_GET["horario"];
     $tempo=$_GET["tempo"];
 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "profissionais";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM login where id=". $id_prof;
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $nome=$row["nome"];
+  }}
+
+  $sql = "SELECT * FROM serviços where id=". $id_serv;
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $serviços=$row["serviços"];
+  }}
+
+
     ?>
+   
+
+
+ 
+   
+  
+  
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Agendamento</title>
     <link rel="stylesheet" href="style.css"/> 
-    <style>
-        body { font-family: Arial; background-color: #f4f4f4; padding: 30px; }
-        form { background: white; padding: 20px; border-radius: 8px; width: 380px; margin: auto; box-shadow: 0 0 10px #ccc; }
-        h2 { text-align: center; }
-        label { font-weight: bold; }
-        input, select, button { width: 100%; padding: 8px; margin: 6px 0; }
-        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #45a049; }
-        
-    </style>
+    
     <main>
-    <section class="servicos">
+    
 </head>
 <body>     
-       <div>
-            <h2>Confirmação do Agendamento</h2>
-               <p> Profissional <?php echo $id_prof; ?></p>
-               <p> Data<?php echo $data; ?></p>
-               <p> Serviço <?php echo $id_serv; ?></p>
+ 
+  <header>
+    <h2>Agenda do Profissional</h2>
+     <nav> 
+        <a href="profissionais.php">Nossos Prosissionais </a>
+        <a href="index.html">Início</a>
+    </nav>
+</header>
+<section class="resumo">
+    <h3>Confirmação do Agendamento</h3>
+               <p> Profissional <?php echo $nome; ?></p>
+               <p> Data <?php echo $data; ?></p>
+               <p> Serviço <?php echo $serviços; ?></p>
                <p> Horário Marcado <?php echo $horario; ?></p>
                <p> Tempo de procedimento <?php echo $tempo; ?></p>
-
+</section>
+               <section class="servico">
+               <h3>Agendamento</h3>  
             <form ACTION="conf_agenda.php" Method='post'>
   <label for="cliente">Nome do Cliente:</label>
         <input type="text" name="cliente" id="cliente" required>
@@ -88,7 +127,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    <input type="submit" name="submit" value="enviar">  
             </form>
-
+</section>
+  <footer>
+    <p>&copy; © 2025 - H&L Agende Já. Todos os direitos reservados </p>
+  </footer>
 </body>
 </html>
     <?php

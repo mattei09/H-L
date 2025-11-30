@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços - Salão</title>
   <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
   <header>
+</section>
     <h1>Nossos Profissionais</h1>
     <nav>
       <a href="index.html">Início</a>
