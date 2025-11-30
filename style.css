@@ -41,10 +41,13 @@ nav a {
 .apresentacao{
   margin: 15px;
   padding: 40px 20px;
-  text-align: left;
+  text-align: center;
 
 }
-
+.apresentacao h1 {
+  font-size: 3rem;
+  color: #171716;
+  margin-bottom: 10px;
 .apresentacao h2 {
   font-size: 2.5rem;
   color: #171716;
