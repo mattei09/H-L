@@ -20,6 +20,8 @@ if ($conn->connect_error) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
     <style>
@@ -106,7 +108,7 @@ echo "<form method='GET' style='margin-bottom:15px;'>
         <button type='submit'>Filtrar</button>
       </form>";
 
-echo "<table border='1' cellpadding='8' cellspacing='0'>";
+echo "<table class='schedule-table' border='1'>";
 echo "<tr><th>Data</th>";
 foreach ($intervalos as $h) echo "<th>$h</th>";
 echo "</tr>";
@@ -144,15 +146,19 @@ for ($d = 0; $d < $dias_exibir; $d++) {
             $cliente = htmlspecialchars($ocupados[$h]['cliente']);
             $horario_cliente = htmlspecialchars($ocupados[$h]['horario']);
             echo "<td style='background:#f8d7da;'>";
-            echo "<a href='editar_agenda.php?id=$data_id' style='color:red;'>$cliente - $horario_cliente</a>";
+            echo "<a href='editar_agenda.php?id=$data_id' style='color:red;'><i class='fa-solid fa-user'></i> $cliente - $horario_cliente</a>";
             echo "</td>";
         } else {
             // free: show actions: Agendar / Bloquear
             $link_agendar = "agendar_prof.php?id_prof=$id_prof&data=" . urlencode($data) . "&horario=" . urlencode($h);
                         $link_bloquear = "bloquear_agenda.php?data=" . urlencode($data) . "&horario=" . urlencode($h);
                         echo "<td style='background:#d4edda;'>
-                                        <a href='$link_agendar' style='margin-right:6px;'>Agendar</a>
-                                        <a href='$link_bloquear' style='color:darkred;' onclick='return confirm(" . '"' . "Bloquear esse horário?" . '"' . ");'>Bloquear</a>
+                                        <a href='$link_agendar' style='margin-right:8px;' title='Agendar' aria-label='Agendar'>
+                                                <i class='fa-solid fa-calendar-plus' aria-hidden='true'></i>
+                                        </a>
+                                        <a href='$link_bloquear' style='color:darkred;' onclick='return confirm(" . '"' . "Bloquear esse horário?" . '"' . ");' title='Bloquear' aria-label='Bloquear'>
+                                                <i class='fa-solid fa-lock' aria-hidden='true'></i>
+                                        </a>
                                     </td>";
         }
     }

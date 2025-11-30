@@ -52,7 +52,7 @@ for ($t = $hora_inicio; $t <= $hora_fim; $t += 30 * 60) {
 
 
 // --- Monta a tabela ---
-echo "<table border='1' cellpadding='8' cellspacing='0'class='card-agenda'>";
+echo "<table class='card-agenda schedule-table' border='1'>";
 echo "<tr><th>Data</th>";
 foreach ($intervalos as $h) echo "<th>$h</th>";
 echo "</tr>";

@@ -62,6 +62,8 @@ if ($rs) while ($rw = $rs->fetch_assoc()) $services[] = $rw;
 <meta charset="utf-8">
 <title>Agendar Cliente</title>
 <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 <h2>Agendar Cliente</h2>
@@ -92,9 +94,9 @@ if ($rs) while ($rw = $rs->fetch_assoc()) $services[] = $rw;
     <label>Tempo (minutos):</label>
     <input type="number" name="tempo" value="<?php echo htmlspecialchars($default_tempo); ?>" min="1" placeholder="Duração em minutos">
 
-    <input type="submit" value="Agendar">
+    <button type="submit" title="Agendar" aria-label="Agendar"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i></button>
 </form>
-<p><a href="agenda-prof.php">Voltar</a></p>
+<p><a href="agenda-prof.php" title="Voltar" aria-label="Voltar"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a></p>
 <script>
     // auto apply tempo param from selected service if decorated with data-tempo
     document.addEventListener('DOMContentLoaded', function() {

@@ -111,6 +111,8 @@ if ($rs) {
 <meta charset="utf-8">
 <title>Editar Agendamento</title>
 <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 <h2>Editar Agendamento</h2>
@@ -154,11 +156,11 @@ if ($rs) {
     echo '<p>Fim estimado: <strong>' . $end_time . '</strong></p>';
     ?>
 
-    <button type="submit" name="action" value="update">Salvar</button>
-    <button type="submit" name="action" value="delete" onclick="return confirm('Tem certeza que deseja excluir esse agendamento?');">Excluir</button>
+    <button type="submit" name="action" value="update" title="Salvar" aria-label="Salvar"><i class="fa-solid fa-save" aria-hidden="true"></i></button>
+    <button type="submit" name="action" value="delete" onclick="return confirm('Tem certeza que deseja excluir esse agendamento?');" title="Excluir" aria-label="Excluir"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
 </form>
 
-<p><a href="agenda-prof.php">Voltar à Agenda</a></p>
+<p><a href="agenda-prof.php" title="Voltar à Agenda" aria-label="Voltar à Agenda"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a></p>
 
 </body>
 </html>

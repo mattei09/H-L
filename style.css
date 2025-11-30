@@ -229,6 +229,25 @@ form button:hover {
   text-align: center;
 }
 
+/* Schedule table padding and styles */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #dec38f;
+  padding: 12px 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+.schedule-table td:first-child,
+.schedule-table th:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+.schedule-table a.icon-btn { display:inline-block; padding:6px; border-radius:4px; }
+
 .agenda-page th {
   background-color: #f0f0f0;
 }
