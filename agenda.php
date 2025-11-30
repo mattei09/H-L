@@ -1,3 +1,26 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços - Salão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>Agenda do Profissional</h2>
+<a href="agenda.php?id=<?= $id_profissional ?>&id_serv=<?= $id_serv ?>&tempo=<?= $tempo_servico ?>">
+
+</a>
+    <nav>
+      <a href="profissionais.php">Profissionais</a>
+        <a href="index.html">Inicio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="servicos">
 <?php
 // --- Conexão com o banco de dados ---
 $conn = new mysqli("localhost", "root", "", "profissionais");
@@ -13,10 +36,7 @@ $data_inicio = date('Y-m-d'); // hoje
 $dias_exibir = 15; // quantos dias mostrar (ex: 7 = uma semana)
 $tempo = $_GET["tempo"];
 ?>
-<h2>Agenda do Profissional</h2>
-<a href="agenda.php?id=<?= $id_profissional ?>&id_serv=<?= $id_serv ?>&tempo=<?= $tempo_servico ?>">
 
-</a>
 <?php
 // --- Gera os horários de meia em meia hora ---
 $hora_inicio = strtotime("08:00");
@@ -32,7 +52,7 @@ for ($t = $hora_inicio; $t <= $hora_fim; $t += 30 * 60) {
 
 
 // --- Monta a tabela ---
-echo "<table border='1' cellpadding='8' cellspacing='0'>";
+echo "<table border='1' cellpadding='8' cellspacing='0'class='card-agenda'>";
 echo "<tr><th>Data</th>";
 foreach ($intervalos as $h) echo "<th>$h</th>";
 echo "</tr>";
@@ -62,14 +82,14 @@ for ($d = 0; $d < $dias_exibir; $d++) {
     foreach ($intervalos as $h) {
        // Defina aqui o intervalo de almoço (ex: 12h às 13h)
     if ($h >= "12:00" && $h < "13:00") {
-        echo "<td style='background:#ffeeba;'>Intervalo</td>";
+        echo "<td style='color:black;'>Intervalo</td>";
     } 
 
      elseif (in_array($h, $ocupados)) {
-        echo "<td style='background:#f8d7da;'>Agendado</td>";
+        echo "<td style='color:red;'>Agendado</td>";
     } else {
     
-         echo "<td style='background:#d4edda;'><a href='conf_agenda.php?id_prof=$id_profissional&data=$data&id_serv=$id_serv&horario=$h&tempo=$tempo'>livre</a></td>";
+         echo "<td style=';'><a href='conf_agenda.php?id_prof=$id_profissional&data=$data&id_serv=$id_serv&horario=$h&tempo=$tempo'>Livre</a></td>";
     } } 
     }
 
