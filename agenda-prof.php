@@ -15,11 +15,58 @@ if ($conn->connect_error) {
 }
 ?>
 <!DOCTYPE html>
- <html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+    <style>
+        #calendar { max-width: 1100px; margin: 40px auto; }
+    </style>
+    <title>Agenda Profissional</title>
+</head>
 <body>
-  <link rel="stylesheet" href="style.css">
-</body>  
-</html>
+    <div id="calendar"></div>
+    
+
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                timeZone: 'local',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: {
+                    url: 'api/agenda_events.php',
+                    method: 'GET',
+                    extraParams: {
+                        id_prof: '<?php echo $id_prof; ?>'
+                    },
+                    failure: function() {
+                        alert('Falha ao carregar eventos.');
+                    }
+                },
+                eventClick: function(info) {
+                    // Open edit page
+                    var id = info.event.id;
+                    window.location.href = 'editar_agenda.php?id=' + id;
+                }
+            });
+
+            calendar.render();
+                });
+            </script>
+
+            <!-- FILTERS & TABLE BELOW -->
+            <div id="agenda-table">
 
 <?php
 // 🔹 Filtros de visualização
@@ -71,14 +118,15 @@ for ($d = 0; $d < $dias_exibir; $d++) {
 
     // 🔹 Busca horários ocupados
     $stmt = $conn->prepare("SELECT * FROM agenda WHERE id_prof = ? AND data = ? ");
-    $stmt->bind_param("id", $id_prof, $d);
+    $stmt->bind_param("is", $id_prof, $data);
     $stmt->execute();
     $result = $stmt->get_result();
 
     $ocupados = [];
     while ($row = $result->fetch_assoc()) {
-        $ocupados[$row['horario']] = $row['id'];
-        
+        // Normaliza horário para HH:MM (existem registros que podem ter HH:MM:SS)
+        $horario_key = substr($row['horario'], 0, 5);
+        $ocupados[$horario_key] = $row['id'];
     }
 
     foreach ($intervalos as $h) {
@@ -86,10 +134,9 @@ for ($d = 0; $d < $dias_exibir; $d++) {
             echo "<td style='background:#ffeeba;'>Intervalo</td>";
         } elseif (array_key_exists($h, $ocupados)) {
             $id_agenda = $ocupados[$h];
-            echo $ocupados[$h];
             echo "<td style='background:#f8d7da;'>
-                    <a href='reagendar.php?id=$id_agenda' style='color:red;'>Agendado $ocupados[$h]</a>
-                  </td>";
+                <a href='editar_agenda.php?id=$id_agenda' style='color:red;'>Agendado</a>
+              </td>";
         } else {
             echo "<td style='background:#d4edda;'>Livre</td>";
         }
@@ -98,6 +145,11 @@ for ($d = 0; $d < $dias_exibir; $d++) {
 }
 
 echo "</table>";
+// debug removed: production mode only
+echo '</div>';
 
 $conn->close();
 ?>
+
+</body>
+</html>
