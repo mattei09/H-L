@@ -7,7 +7,7 @@ $dbname = "profissionais";
 
 
 $serviços = $_POST["serviços"];
-$prof = $_SESSION["usuario"];
+$prof = $_SESSION["id"];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection

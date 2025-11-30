@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f5ece0;
+ /*textinho da pagina de inicio*/
+  color: #091009;
+}
+
+header {
+  background-color: #c7b299;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.apresentacao h2 {
+  font-size: 2.5rem;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.apresentacao p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-login{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c7b299;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #c7b299;
+}
+
+.btn-agendar{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c7b299;
+  color: rgb(240, 237, 234);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  box-shadow: 0 4px 8px rgba(126, 117, 75, 0.911);
+}
+
+.btn-agendar:hover {
+  background-color: #c7b299;
+}
+footer {
+  background-color: #c88e59;
+  text-align: center;
+  color: rgb(36, 32, 32);
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.servicos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 20px;
+  padding: 40px 20px;
+   background-color: #c7b299;
+}
+
+.card-servico {
+  background-color: #cdf3d0;
+  border: 2px solid #c88e59;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(74, 71, 57, 0.911);
+  transition: transform 0.3s;
+}
+
+.card-servico:hover {
+  transform: translateY(-5px);
+}
+
+.card-servico img {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+}
+ 
+.card-servico h3 {
+  color: #644426;
+  margin: 15px 0 5px;
+}
+.card-servico h1 {
+  color: #c7b299;
+  margin: 15px 0 5px;
+}
+.card-servico p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card-servico span {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.formulario-agendamento {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #fff0f5;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #3dce20;
+  box-shadow: 0 4px 8px rgba(200, 3, 55, 0.844);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #c7b299;
+}
+
+form input,
+form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+form button {
+  padding: 12px;
+  background-color: #c799af;
+  color: rgb(241, 234, 234);
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #c7b299;
+}
+
+.btn-barra nav{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c7b299;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+/* estilização da pagina da agenda  */
+.agenda-page {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.agenda-page h1 {
+  text-align: center;
+}
+
+.agenda-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agenda-page th,
+.agenda-page td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.agenda-page th {
+  background-color: #f0f0f0;
+}
+
+.agenda-page .red {
+  color: #c7b299;
+  font-weight: bold;
+}
+
+.agenda-page .green {
+  color: rgb(247, 241, 184);
+  font-weight: bold;
+}
+/* login dos profissionais */
+.login {
+  background-color: #6b5402ce;
+  padding: 30px;
+  max-width: 350px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(242, 247, 196, 0.97);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login label {
+  display: block;
+  margin-bottom: 8px;
+  color: ##eeddcc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
