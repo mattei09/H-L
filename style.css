@@ -41,6 +41,12 @@ nav a {
   font-weight: bold;
 }
 
+administrador {
+  margin: 20px;
+  padding: 40px 20px;
+  text-align: left;
+
+}
 .apresentacao{
   margin: 15px;
   padding: 40px 20px;
@@ -357,7 +363,7 @@ color: green
   padding: 40px 20px;
   background-color:#c88e59;
   max-width: 350px;
-  margin: -15px auto;
+  margin: 25px auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(28, 27, 26, 0.911);;
   font-family: 'Segoe UI', sans-serif;
