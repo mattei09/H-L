@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
     <style>
-        #calendar { max-width: 1100px; margin: 40px auto; }
+        #calendar { max-width: 1100px; margin: 0px auto; }
     </style>    
 </head>
 
