@@ -8,6 +8,7 @@ $dbname = "profissionais";
 $nome = $_POST["name"];
 $email = $_POST["email"];
 $senha = $_POST["password"];
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 $genero = $_POST["gender"];
 $especialidade = $_POST["espec"];
 
@@ -66,7 +67,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO login (nome, email, senha, tipo, genero, especialidade, imagem)
-VALUES ('$nome', '$email', '$senha', 0, '$genero','$especialidade', '$target_file')";
+VALUES ('$nome', '$email', '$senha_hash', 0, '$genero','$especialidade', '$target_file')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
