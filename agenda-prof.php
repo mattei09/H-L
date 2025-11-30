@@ -126,19 +126,34 @@ for ($d = 0; $d < $dias_exibir; $d++) {
     while ($row = $result->fetch_assoc()) {
         // Normaliza horário para HH:MM (existem registros que podem ter HH:MM:SS)
         $horario_key = substr($row['horario'], 0, 5);
-        $ocupados[$horario_key] = $row['id'];
+        $ocupados[$horario_key] = [
+            'id' => $row['id'],
+            'cliente' => $row['cliente'],
+            'telefone' => $row['telefone'],
+            'id_serv' => $row['id_serv'],
+            'tempo' => $row['tempo'],
+            'horario' => substr($row['horario'],0,5)
+        ];
     }
 
     foreach ($intervalos as $h) {
         if ($h >= "12:00" && $h < "13:00") {
             echo "<td style='background:#ffeeba;'>Intervalo</td>";
         } elseif (array_key_exists($h, $ocupados)) {
-            $id_agenda = $ocupados[$h];
-            echo "<td style='background:#f8d7da;'>
-                <a href='editar_agenda.php?id=$id_agenda' style='color:red;'>Agendado</a>
-              </td>";
+            $data_id = $ocupados[$h]['id'];
+            $cliente = htmlspecialchars($ocupados[$h]['cliente']);
+            $horario_cliente = htmlspecialchars($ocupados[$h]['horario']);
+            echo "<td style='background:#f8d7da;'>";
+            echo "<a href='editar_agenda.php?id=$data_id' style='color:red;'>$cliente - $horario_cliente</a>";
+            echo "</td>";
         } else {
-            echo "<td style='background:#d4edda;'>Livre</td>";
+            // free: show actions: Agendar / Bloquear
+            $link_agendar = "agendar_prof.php?id_prof=$id_prof&data=" . urlencode($data) . "&horario=" . urlencode($h);
+                        $link_bloquear = "bloquear_agenda.php?data=" . urlencode($data) . "&horario=" . urlencode($h);
+                        echo "<td style='background:#d4edda;'>
+                                        <a href='$link_agendar' style='margin-right:6px;'>Agendar</a>
+                                        <a href='$link_bloquear' style='color:darkred;' onclick='return confirm(" . '"' . "Bloquear esse horário?" . '"' . ");'>Bloquear</a>
+                                    </td>";
         }
     }
     echo "</tr>";
