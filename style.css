@@ -41,8 +41,15 @@ nav a {
   font-weight: bold;
 }
 
-administrador {
-  margin: 20px;
+.administrador {
+  margin: 10px;
+  padding: 40px 20px;
+  text-align: left;
+
+}
+
+.profissional-agenda {
+  margin: 10px;
   padding: 40px 20px;
   text-align: left;
 

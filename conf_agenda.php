@@ -96,7 +96,7 @@ if ($result->num_rows > 0) {
 <body>     
  
   <header>
-    <h2>Agenda do Profissional</h2>
+    <h2>Confirmação de Agendamento</h2>
      <nav> 
         <a href="profissionais.php">Nossos Prosissionais </a>
         <a href="index.html">Início</a>

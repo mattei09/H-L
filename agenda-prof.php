@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 <!DOCTYPE html>
 <html>
 <head>
+    <section class="profissional-agenda">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
@@ -26,9 +27,16 @@ if ($conn->connect_error) {
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
     <style>
         #calendar { max-width: 1100px; margin: 40px auto; }
-    </style>
-    <title>Agenda Profissional</title>
+    </style>    
 </head>
+
+  <header>
+    <h2>Confirmação de Agendamento</h2>
+     <nav> 
+        <a href="area-prof.html">Voltar</a>
+        <a href="index.html">Início</a>
+    </nav>
+</header>
 <body>
     <div id="calendar"></div>
     

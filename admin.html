@@ -17,19 +17,19 @@
     <h1> Cadastrar novos profissionais</h1>
 <form method="post" action="admin.php" enctype="multipart/form-data">  
   Nome: <input type="text" name="name">
-  <br><br>
+  <br /><br />
   E-mail: <input type="text" name="email">
-  <br><br>
+  <br /><br />
   Senha: <input type="text" name="password">
-  <br><br>
+  <br /><br />
   Genero:
-  <input type="radio" name="gender" value="feminino">Female
-  <input type="radio" name="gender" value="masculino">Male
-  <input type="radio" name="gender" value="outros">Other
-  <br>  
-  <br>
+  <div><input type="radio" name="gender" value="feminino" /> Female</div>
+  <div><input type="radio" name="gender" value="masculino" /> Male</div>
+  <div><input type="radio" name="gender" value="outros" /> Other</div>
+  <br />  
+  <br />
   Especialidade: <input type="text" name="espec">
-  <br><br>
+  <br /><br />
   Imagem para upload:
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" name="submit" value="enviar">  
