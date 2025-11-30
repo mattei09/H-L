@@ -52,6 +52,7 @@ for ($t = $hora_inicio; $t <= $hora_fim; $t += 30 * 60) {
 
 
 // --- Monta a tabela ---
+echo "<div class='table-responsive'>";
 echo "<table class='card-agenda schedule-table' border='1'>";
 echo "<tr><th>Data</th>";
 foreach ($intervalos as $h) echo "<th>$h</th>";
@@ -99,6 +100,7 @@ for ($d = 0; $d < $dias_exibir; $d++) {
 
 
 echo "</table>";
+echo "</div>";
 
 $conn->close();
 ?>

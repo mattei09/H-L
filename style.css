@@ -237,9 +237,32 @@ form button:hover {
 }
 
 /* Schedule table padding and styles */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  max-width: 100%;
+}
+.table-responsive .card-agenda {
+  display: block; /* Override inline-block for responsive container */
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px; /* Ensures table doesn't shrink too much */
+  background-color: #dec38f82;
+  display: table; /* Override card-agenda inline-block */
+  max-width: 100%; /* Ensure it respects container */
+}
+.card-agenda.schedule-table {
+  display: table; /* Override card-agenda inline-block for tables */
+  width: 100%;
+  max-width: 100%;
 }
 .schedule-table th,
 .schedule-table td {
@@ -247,11 +270,25 @@ form button:hover {
   padding: 12px 14px;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap; /* Prevents text wrapping in cells */
+  background-color: #dec38f82;
+}
+.schedule-table th {
+  background-color: #c88e59;
 }
 .schedule-table td:first-child,
 .schedule-table th:first-child {
   text-align: left;
   font-weight: 600;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+.schedule-table th:first-child {
+  background-color: #c88e59;
+}
+.schedule-table td:first-child {
+  background-color: #dec38f82;
 }
 .schedule-table a.icon-btn { display:inline-block; padding:6px; border-radius:4px; }
 
